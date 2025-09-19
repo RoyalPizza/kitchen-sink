@@ -145,6 +145,25 @@ int main(int, char**)
             ImGui::End();
         }
 
+        // Property pane (fixed on right, resizable, show/hide)
+        if (true) {
+            // Get window size
+            int windowWidth, windowHeight;
+            SDL_GetWindowSize(window, &windowWidth, &windowHeight);
+
+            // Set property pane position and size
+            float paneWidth = 200.0f; // Adjustable width
+            ImGui::SetNextWindowPos(ImVec2(windowWidth - paneWidth, 0), ImGuiCond_Always);
+            ImGui::SetNextWindowSize(ImVec2(paneWidth, (float)windowHeight), ImGuiCond_Always);
+
+            // Create property pane
+            ImGui::Begin("Properties", nullptr, ImGuiWindowFlags_NoMove | ImGuiWindowFlags_NoCollapse);
+            ImGui::Text("Property Pane");
+            ImGui::SliderFloat("Value", &paneWidth, 100.0f, 400.0f); // Resize pane
+            ImGui::Text("Add controls here...");
+            ImGui::End();
+        }
+
         // Rendering
         ImGui::Render();
         glViewport(0, 0, (int)io.DisplaySize.x, (int)io.DisplaySize.y);

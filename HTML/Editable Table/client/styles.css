@@ -1,0 +1,15 @@
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+table .my-table-style {
+    background: lightblue;
+}
+
+button {
+    margin: 10px;
+}
+
+.validation-error {
+    border: 1px solid red;
+}

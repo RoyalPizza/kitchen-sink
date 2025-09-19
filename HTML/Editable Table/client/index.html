@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Sample page</title>
+    <script defer src="tasks.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <table>
+        <caption>Static Table (Captions always sit at the top)</caption>
+
+        <!-- This feature is not common anymore. Use CSS.-->
+        <colgroup>
+            <col />
+            <col span="2" class="my-table-style" />
+            <col />
+        </colgroup>
+
+        <thead>
+            <tr>
+                <th>Column 1</th>
+                <th>Column 2</th>
+                <th>Column 3</th>
+                <th>Column 4</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Value 1</td>
+                <td>Value 2</td>
+                <td>Value 3</td>
+                <td>Value 4</td>
+            </tr>
+            <tr>
+                <td>Value 1</td>
+                <td>Value 2</td>
+                <td>Value 3</td>
+                <td>Value 4</td>
+                <td>Value 5</td> <!-- You can have more cells than columns apparently -->
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="4">Footer Example</td>
+            </tr>
+        </tfoot>
+    </table>
+
+    <br />
+    <br />
+
+    <!-- no intellisense for fetchTasks(). Need to figure out why -->
+    <button onclick="fetchTasks()">Fetch tasks</button>
+
+    <table id="taskTable">
+        <caption>Dynamic Table</caption>
+        <colgroup>
+            <col style="width: 100px" />
+            <col style="width: 200px" />
+        </colgroup>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody id="taskTableBody">
+
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="2">Tasks: <span id="taskCount">0</span></td>
+            </tr>
+        </tfoot>
+
+    </table>
+</body>
+
+</html>
